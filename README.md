@@ -3,6 +3,7 @@
 Example of output:
 ```
 event: 1eba2aa1-2acf-460d-91e6-55a8c3e3b7a3.json
+error path: required
 'labels' is a required property
 
 Failed validating 'required' in schema:
