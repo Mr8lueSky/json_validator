@@ -44,7 +44,7 @@ for event_path in events_paths:
         error_message = "There is no such schema to validate this event. " \
                         + "Change 'event' field to schema that exist or create new schema"
     except jsonschema.exceptions.ValidationError as error:
-        error_message = "{}. Add this field".format(error.message)
+        error_message = error.message
     except jsonschema.exceptions.SchemaError as error:
         error_message = error.message
     finally:
