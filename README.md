@@ -13,11 +13,11 @@ event: 29f0bfa7-bd51-4d45-93be-f6ead1ae0b96.json
 
 
 event: 2e8ffd3c-dbda-42df-9901-b7a30869511a.json
-There is no such schema to validate this event. Change 'event' field to schema that exist or create ne schema
+There is no such schema to validate this event. Change 'event' field to schema that exist or create new schema
 
 
 event: 3ade063d-d1b9-453f-85b4-dda7bfda4711.json
-There is no such schema to validate this event. Change 'event' field to schema that exist or create ne schema
+There is no such schema to validate this event. Change 'event' field to schema that exist or create new schema
 
 
 event: 3b4088ef-7521-4114-ac56-57c68632d431.json
@@ -25,7 +25,7 @@ event: 3b4088ef-7521-4114-ac56-57c68632d431.json
 
 
 event: 6b1984e5-4092-4279-9dce-bdaa831c7932.json
-There is no such schema to validate this event. Change 'event' field to schema that exist or create ne schema
+There is no such schema to validate this event. Change 'event' field to schema that exist or create new schema
 
 
 event: a95d845c-8d9e-4e07-8948-275167643a40.json
@@ -33,7 +33,7 @@ There is no 'event' field. Add this field
 
 
 event: ba25151c-914f-4f47-909a-7a65a6339f34.json
-There is no such schema to validate this event. Change 'event' field to schema that exist or create ne schema
+There is no such schema to validate this event. Change 'event' field to schema that exist or create new schema
 
 
 event: bb998113-bc02-4cd1-9410-d9ae94f53eb0.json
@@ -41,7 +41,7 @@ event: bb998113-bc02-4cd1-9410-d9ae94f53eb0.json
 
 
 event: c72d21cf-1152-4d8e-b649-e198149d5bbb.json
-There is no such schema to validate this event. Change 'event' field to schema that exist or create ne schema
+There is no such schema to validate this event. Change 'event' field to schema that exist or create new schema
 
 
 event: cc07e442-7986-4714-8fc2-ac2256690a90.json
