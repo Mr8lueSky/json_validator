@@ -3,6 +3,10 @@ import jsonschema
 import os
 
 
+EVENT_FOLDER = 'event'
+SCHEMA_FOLDER = 'schema'
+
+
 def log_message(event_filename, message):
     message = [
         "event: {}".format(event_filename),
@@ -18,19 +22,18 @@ logs = []
 events_paths = os.listdir("event")
 
 events = []
+
 for event_path in events_paths:
-    with open("event/" + event_path, 'r') as file:
+    error_message = ''
+    with open("{}/{}".format(EVENT_FOLDER, event_path), 'r') as file:
         try:
-            events.append(json.load(file))
+            event = json.load(file)
         except json.decoder.JSONDecodeError as error:
             logs.append(log_message(event_path, error))
-
-for event in events:
-    error_message = ''
-    event_path = events_paths[events.index(event)]
+            continue
     try:
         schema_path = event['event'] + ".schema"
-        with open("schema/{}".format(schema_path), 'r') as file:
+        with open("{}/{}".format(SCHEMA_FOLDER, schema_path), 'r') as file:
             schema = json.load(file)
         jsonschema.validate(event, schema)
     except TypeError as error:
