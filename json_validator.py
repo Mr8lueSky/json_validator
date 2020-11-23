@@ -12,7 +12,7 @@ def log_message(event_filename, message):
         "event: {}".format(event_filename),
         "{}".format(message)
     ]
-    return "\n".join(message) + "\n"
+    return "\n".join(message)
 
 
 print("Starting validation...")
@@ -44,14 +44,14 @@ for event_path in events_paths:
         error_message = "There is no such schema to validate this event. " \
                         + "Change 'event' field to schema that exist or create new schema"
     except jsonschema.exceptions.ValidationError as error:
-        error_message = error.message
+        error_message = error
     except jsonschema.exceptions.SchemaError as error:
-        error_message = error.message
+        error_message = error
     finally:
         if error_message:
             logs.append(log_message(event_path, error_message))
 
 with open('log.txt', 'w') as file:
-    file.write("\n\n".join(logs))
+    file.write("\n\n\n".join(logs))
 
 print("Valid is complete.")
