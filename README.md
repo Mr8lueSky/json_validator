@@ -1,64 +1,85 @@
 # json_validator
 
+Example of output:
+```
 event: 1eba2aa1-2acf-460d-91e6-55a8c3e3b7a3.json
-'id' is a required property. Add this field
+'labels' is a required property
+
+Failed validating 'required' in schema:
+    {'$schema': 'http://json-schema.org/schema#',
+     'properties': {'id': {'type': ['null', 'integer']},
+                    'labels': {'items': {'properties': {'category': {'type': ['null',
+                                                                              'string']},
+                                                        'color': {'type': ['null',
+                                                                           'object']},
+                                                        'is_custom_tag': {'type': 'boolean'},
+                                                        'name_en': {'type': 'string'},
+                                                        'name_ru': {'type': 'string'},
+                                                        'property_arousal': {'type': ['string',
+                                                                                      'null']},
+                                                        'property_pleasure': {'type': ['string',
+                                                                                       'null']},
+                                                        'property_stability': {'type': ['string',
+                                                                                        'null']},
+                                                        'property_vitality': {'type': ['string',
+                                                                                       'null']},
+                                                        'property_where': {'type': ['string',
+                                                                                    'null']},
+                                                        'slug': {'type': 'string'},
+                                                        'type': {'type': 'integer'},
+                                                        'type_stress': {'type': 'integer'}},
+                                         'required': ['category',
+                                                      'color',
+                                                      'is_custom_tag',
+                                                      'name_en',
+                                                      'name_ru',
+                                                      'property_arousal',
+                                                      'property_pleasure',
+                                                      'property_stability',
+                                                      'property_vitality',
+                                                      'property_where',
+                                                      'slug',
+                                                      'type',
+                                                      'type_stress'],
+                                         'type': 'object'},
+                               'type': 'array'},
+                    'rr_id': {'type': ['null', 'integer']},
+                    'timestamp': {'type': 'string'},
+                    'unique_id': {'type': 'string'},
+                    'user': {'properties': {'id': {'type': 'integer'}},
+                             'required': ['id'],
+                             'type': 'object'},
+                    'user_id': {'type': 'integer'}},
+     'required': ['id',
+                  'labels',
+                  'rr_id',
+                  'timestamp',
+                  'unique_id',
+                  'user',
+                  'user_id'],
+     'type': 'object'}
+
+On instance:
+    {'created_at': '2020-09-09T11:07:45.080214Z',
+     'data': {'id': None,
+              'labels': [{'category': 'health-body',
+                          'color': {'color': '#e83e35', 'label': 'stress'},
+                          'is_custom_tag': False,
+                          'name_en': 'cold/flu',
+                          'name_ru': 'простуда/грипп',
+                          'property_arousal': None,
+                          'property_pleasure': None,
+                          'property_stability': None,
+                          'property_vitality': None,
+                          'property_where': None,
+                          'slug': 'flu',
+                          'type': 2,
+                          'type_stress': 2}],
+              'rr_id': None,
+              'timestamp': '2020-09-09T14:07:44'},
+     'environment_id': 2,
+     'event': 'label_selected',
+     'id': 'as'}
 
 
-event: 297e4dc6-07d1-420d-a5ae-e4aff3aedc19.json
-'source' is a required property. Add this field
-
-
-event: 29f0bfa7-bd51-4d45-93be-f6ead1ae0b96.json
-'event' field is not a string. Edit this field
-
-
-event: 2e8ffd3c-dbda-42df-9901-b7a30869511a.json
-There is no such schema to validate this event. Change 'event' field to schema that exist or create new schema
-
-
-event: 3ade063d-d1b9-453f-85b4-dda7bfda4711.json
-There is no such schema to validate this event. Change 'event' field to schema that exist or create new schema
-
-
-event: 3b4088ef-7521-4114-ac56-57c68632d431.json
-'cmarkers' is a required property. Add this field
-
-
-event: 6b1984e5-4092-4279-9dce-bdaa831c7932.json
-There is no such schema to validate this event. Change 'event' field to schema that exist or create new schema
-
-
-event: a95d845c-8d9e-4e07-8948-275167643a40.json
-There is no 'event' field. Add this field
-
-
-event: ba25151c-914f-4f47-909a-7a65a6339f34.json
-There is no such schema to validate this event. Change 'event' field to schema that exist or create new schema
-
-
-event: bb998113-bc02-4cd1-9410-d9ae94f53eb0.json
-'source' is a required property. Add this field
-
-
-event: c72d21cf-1152-4d8e-b649-e198149d5bbb.json
-There is no such schema to validate this event. Change 'event' field to schema that exist or create new schema
-
-
-event: cc07e442-7986-4714-8fc2-ac2256690a90.json
-'id' is a required property. Add this field
-
-
-event: e2d760c3-7e10-4464-ab22-7fda6b5e2562.json
-'cmarkers' is a required property. Add this field
-
-
-event: f5656ff6-29e1-46b0-8d8a-ff77f9cc0953.json
-'source' is a required property. Add this field
-
-
-event: fb1a0854-9535-404d-9bdd-9ec0abb6cd6c.json
-'cmarkers' is a required property. Add this field
-
-
-event: ffe6b214-d543-40a8-8da3-deb0dc5bbd8c.json
-'cmarkers' is a required property. Add this field
+```
