@@ -7,9 +7,10 @@ EVENT_FOLDER = 'event'
 SCHEMA_FOLDER = 'schema'
 
 
-def log_message(event_filename, message):
+def log_message(event_filename, message, path=''):
     message = [
         "event: {}".format(event_filename),
+        "error path: {}".format(path),
         "{}".format(message)
     ]
     return "\n".join(message)
@@ -25,6 +26,7 @@ events = []
 
 for event_path in events_paths:
     error_message = ''
+    error_path = ''
     with open("{}/{}".format(EVENT_FOLDER, event_path), 'r') as file:
         try:
             event = json.load(file)
@@ -44,12 +46,13 @@ for event_path in events_paths:
         error_message = "There is no such schema to validate this event. " \
                         + "Change 'event' field to schema that exist or create new schema"
     except jsonschema.exceptions.ValidationError as error:
+        error_path = "/".join(error.absolute_schema_path)
         error_message = error
     except jsonschema.exceptions.SchemaError as error:
         error_message = error
     finally:
         if error_message:
-            logs.append(log_message(event_path, error_message))
+            logs.append(log_message(event_path, error_message, error_path))
 
 with open('log.txt', 'w') as file:
     file.write("\n\n\n".join(logs))
